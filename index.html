@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,800;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <img src="/assets/logo.svg" alt="logo" class="logo" />
+            <ul class="menu">
+                <li>HOME</li>
+                <li>PLANS</li>
+                <li>FEATURES</li>
+                <li>CONTACT</li>
+            </ul>
+        </div>
+        <button class="btn">Download</button>
+        <button class="menu-mobile" onclick="handleOpen()">
+            <img src="/assets/menu.svg" alt="menu mobile" />
+        </button>
+    </nav>
+    <section class="hero-banner">
+        <div class="main-section-container">
+            <div class="main-left">
+                <div class="title-container">
+                    <h1>Stunning Design Tools</h1>
+                    <p class="desc">Discover the platform that gives you the freedom to create, design, manage and develop your web presence exactly the way you want.</p>
+                </div>
+                <button class="btn">Get Started</button>
+            </div>
+            <div class="main-right">
+                <img src="/assets/mockup.png" alt="mockup">
+            </div>
+        </div>
+        <div class="play-button-container">
+            <img src="/assets/play-icon.svg" alt="play button" />
+            <div>
+                <p>The Freedom to Create the Websites You Want</p>
+                <p>watch the video</p>
+            </div>
+        </div>
+    </section>
+    <div class="bg-purple"></div>
+    <div class="menu-mobile-container">
+        <button class="close-mobile" onclick="handleClose()">
+            <img src="/assets/close.svg" alt="close">
+        </button>
+        <ul class="menu">
+            <li>HOME</li>
+            <li>PLANS</li>
+            <li>FEATURES</li>
+            <li>CONTACT</li>
+        </ul>
+    </div>
+    <script>
+        function handleClose(){
+            const element = document.getElementsByClassName("menu-mobile-container")[0];
+            element.classList.remove("open");
+            element.classList.add("close");
+        }
+        function handleOpen(){
+            const element = document.getElementsByClassName("menu-mobile-container")[0];
+            element.classList.remove("close");
+            element.classList.add("open");
+        }
+    </script>
+</body>
+</html>

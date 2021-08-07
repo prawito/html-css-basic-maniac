@@ -1,0 +1,242 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+}
+
+body {
+    background-image: linear-gradient(to right, #F5F9FF, #E7F1FE);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 49px 48px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    img.logo {
+        width: 64px;
+        height: 64px;
+    }
+
+    ul.menu {
+        display: flex;
+        list-style: none;
+        li {
+            padding: 0px 37px;
+            font-size: 13px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+        img.logo {
+            margin-right: 10%;
+        }
+    }
+}
+
+button.btn {
+    border-radius: 100px;
+    padding: 18px 54px;
+    border: none;
+    outline: none;
+    background-color: #7364D9;
+    color: white;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.hero-banner {
+    padding: 0px 150px;
+    .title-container {
+        margin-bottom: 48px;
+        h1 {
+            font-size: 72px;
+            font-weight: normal;
+            max-width: 80%;
+            color: #1D2433;
+        }
+        p.desc {
+            color: #1D2433;
+            font-size: 18px;
+            max-width: 80%;
+            line-height: 2em;
+        }
+    }
+    .play-button-container {
+        display: flex;
+        margin-top: 177px;
+        img {
+            width: 56px;
+            height: 56px;
+            margin-right: 24px;
+        }
+    }
+}
+
+.bg-purple {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: #54499E;
+    width: 30%;
+    border-radius: 80px 0px 0px 80px;
+    z-index: 0;
+}
+
+.main-section-container {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    .main-left, .main-right {
+        width: 50%;
+    }
+    .main-right {
+        position: relative;
+        img {
+            position: absolute;
+            left: -30%;
+            transform: scale(90%);
+        }
+    }
+}
+
+.menu-mobile, .menu-mobile-container{
+    display: none;
+}
+
+@media screen and (max-width: 500px){
+    html {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+
+    nav {
+        padding: 20px 20px;
+        ul.menu {
+            display: none;
+        }
+        button.btn {
+            display: none;
+        }
+    }
+
+    .hero-banner {
+        padding: 20px;
+        .title-container {
+            margin-bottom: 48px;
+            h1 {
+                max-width: 100%;
+                font-size: 3em;
+            }
+            p.desc {
+                max-width: 100%;
+                line-height: 2em;
+            }
+        }
+        .play-button-container {
+            margin-top: 80px;
+        }
+    }
+
+    .main-section-container {
+        flex-wrap: wrap;
+        .main-left, .main-right {
+            width: 100%;
+        }
+        .main-right {
+            img {
+                display: none;
+            }
+        }
+    }
+
+    .bg-purple {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: block;
+        border: none;
+        background-color: transparent;
+        img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    .menu-mobile-container {
+        position: fixed;
+        bottom: 100vh; 
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.90);
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .menu {
+            color: white;
+            list-style: none;
+            li {
+                font-size: 2.5em;
+                text-align: center;
+                padding: 10px 0px;
+            }
+        }
+        .close-mobile {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            img {
+                width: 42px;
+            }
+        }
+
+        &.open {
+            bottom: 0px;
+            animation: move 1.75s ease;
+        }
+
+        &.close {
+            bottom: 100vh; 
+            animation: close 1.75s ease;
+        }
+    }
+}
+
+@keyframes move {
+    0% {
+        bottom: 100vh;
+    }
+    100% {
+        bottom: 0px;
+    }
+  }
+
+@keyframes close {
+    0% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: 100vh;
+    }
+  }
